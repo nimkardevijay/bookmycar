@@ -1,0 +1,56 @@
+<div class="container-fluid">
+  <app-header></app-header>
+    <h5 style="text-align: center;margin-top: 10px;">Checkout Details</h5>
+    <hr>  
+    <form  class="row-cols-2" style="margin-left: 25%;" >
+      <div class="form-group">
+        <div class="form-group">                  
+            <p>Car Brand : {{brand}}  </p>    
+        </div>
+        <div class="form-group">            
+            <p>Car Model :{{orderCheckoutDetails['model']}} </p>
+        </div>
+        <div class="form-group">                     
+            <p>Car Price : {{orderCheckoutDetails['price']}} INR</p>
+        </div>
+        <div class="form-group">                     
+          <p>Showroom : {{orderCheckoutDetails['showroom']}} </p>
+      </div>
+        <div class="form-group">                  
+          <p>Payment option : COD     
+       </div>
+        <div class="form-group">
+            <label>Your Full Name</label>           
+            <input name="customerName" type="text" [(ngModel)]="orderCheckoutDetails['customerName']" class="form-control">           
+        </div>
+        <div class="form-group">
+            <label>Contact Number</label>           
+            <input name="customerContactNum" type="number" required maxlength="10"  [(ngModel)]="orderCheckoutDetails['customerContactNum']"  class="form-control">           
+        </div>
+        <div class="form-group">
+            <label>Email</label>           
+            <input name="cusotmerEmail" type="text" [(ngModel)]="orderCheckoutDetails['cusotmerEmail']"  class="form-control">           
+        </div>         
+      </div>
+      <div>
+        <div class="form-group">
+            <label>Address</label>
+            <input name="customerAddress" type="text" [(ngModel)]="orderCheckoutDetails['customerAddress']"  class="form-control">
+        </div>      
+        <!-- <div class="form-group">
+          <label>State</label>
+          <input type="text"  class="form-control">
+        </div> -->
+        <div class="form-group">
+            <label>City</label>
+            <input name="city" type="text" [(ngModel)]="orderCheckoutDetails['city']"  class="form-control">
+        </div>   
+         
+        <!-- <div class="form-group">
+          <label>Postal Code</label>
+          <input type="text" class="form-control">
+        </div> -->
+        <button class="btn btn-primary" type="submit" (click)="confirmOrder()">Confirm</button>  
+      </div>
+    </form>
+</div>  

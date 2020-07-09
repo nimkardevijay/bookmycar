@@ -1,0 +1,13 @@
+<div class="header" style="text-align: center;">
+    <p style="font-weight: bold;color: rgb(252, 56, 56);font-size: 25px;margin-top: 10px;"> BookMyCar.com</p>
+    <nav>         
+        <a routerLink="" [ngStyle]="{'color':page=='search' ? '#039be5' : '' }">Search Car</a>
+        <a  [ngStyle]="{'color':page=='catalog' ? '#039be5' : '' }" *ngIf="page=='catalog'">Search Catalog</a> 
+        <!-- <a routerLink="signup" routerLinkActive="active">Sign Up</a>
+        <a routerLink="login" routerLinkActive="active">Login</a> -->      
+        <a [ngStyle]="{'color':page=='checkout' ? '#039be5' : '' }" *ngIf="page=='checkout'">Checkout</a>
+        <a [ngStyle]="{'color':page=='order-details' ? '#039be5' : '' }" *ngIf="page=='order-details'">Booking Details</a> 
+        <!-- <a routerLink="logout" routerLinkActive="active">Logout</a> -->
+      </nav>
+      <hr>
+</div>

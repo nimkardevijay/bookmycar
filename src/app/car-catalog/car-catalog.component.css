@@ -1,0 +1,15 @@
+
+.left{
+    width: 28%;   
+    height: auto;
+    float: left;  
+    border: 1px solid rgb(211, 207, 207);; 
+    margin-top: 8px;
+    text-align: center;
+}
+.rightdiv{
+    float: right;
+    width: 70%;   
+    margin-top: 8px;
+   
+}

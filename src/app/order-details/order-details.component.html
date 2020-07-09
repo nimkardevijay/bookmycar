@@ -1,0 +1,70 @@
+<div class="container-fluid">
+    <app-header></app-header>   
+    <p style="color: green;text-align: center;margin-top: 10px;">Congratulations..!! Your car has been booked successfully..!!</p>
+    <hr>     
+    <div style="margin-left: 20%;"  class="row-cols-2">
+     <div class="form-group">
+        <div class="form-group">
+            <label>Booking ID :&nbsp;</label>           
+            <span>{{sumittedOrderDetails['orderId']}}</span>          
+        </div>
+        <div class="form-group">
+            <label>Brand :&nbsp;</label>           
+            <span>{{sumittedOrderDetails['brand']}}</span> 
+        </div>        
+        <div class="form-group">
+            <label>Selected CAR-Model : &nbsp;</label>           
+            <span>{{sumittedOrderDetails['model']}}</span>          
+        </div>
+        <div class="form-group">
+            <label>Car Price (in INR) : &nbsp;</label>           
+           <span>{{sumittedOrderDetails['price']}} INR</span>          
+        </div>
+        <div class="form-group">
+            <label>Customer Name : &nbsp;</label>           
+             <span>{{sumittedOrderDetails['customerName']}}</span>
+        </div>
+        <div class="form-group">
+            <label>Customer Contact Number : &nbsp;</label>           
+            <span>{{sumittedOrderDetails['customerContactNum']}}</span>
+        </div>
+        <div class="form-group">
+            <label>Customer Email : &nbsp;</label>           
+            <span>{{sumittedOrderDetails['cusotmerEmail']}}</span>
+        </div>         
+      </div>
+      <div>
+        <div class="form-group">
+            <label>Customer Address : &nbsp;</label>
+            <span>{{sumittedOrderDetails['customerAddress']}}</span>
+        </div>      
+        <!-- <div class="form-group">
+          <label>State  : &nbsp;</label>
+          <span>Maharashtra</span> 
+        </div> -->
+        <div class="form-group">
+            <label>City  : &nbsp;</label>
+            <span>{{sumittedOrderDetails['city']}}</span>
+        </div>    
+        <!-- <div class="form-group">
+          <label>Postal Code : &nbsp;</label>
+         <span>411017</span>
+        </div> -->
+        <div class="form-group">
+            <label>Showroom : &nbsp;</label>           
+             <span>{{sumittedOrderDetails['showroom']}}</span>           
+        </div> 
+        <div class="form-group">
+            <label>For futher procedure please visit {{sumittedOrderDetails['showroom']}} within 5 days!</label>             
+        </div> 
+        <div class="form-group">
+            <label>For any query call us at : &nbsp;</label>        
+            <span>9777777777</span>
+        </div>
+        <div class="form-group">
+            <label>Write us at  : &nbsp;</label>           
+             <span>sales@bookmycar.com</span>
+        </div>           
+      </div>
+    </div>
+</div>  

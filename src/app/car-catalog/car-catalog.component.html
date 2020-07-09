@@ -1,0 +1,80 @@
+<div class="container-fluid">
+        <app-header></app-header>
+        <div >
+        <div class="left">
+            <nav>
+                <p>Filter Section</p>
+                <hr>
+                <div>
+                    <b>Model:</b>
+                    <hr>
+                    <div>
+                        <div *ngFor="let carModel of models">   
+                            <div class="checkbox" style="margin-left: 100px; text-align: left;">
+                                <input type="checkbox" value={{carModel}} (change)="addToFilterModel($event,carModel)"><label> &nbsp;{{carModel}}</label> &nbsp; 
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                </div>
+                <div>
+                    <b>Colors:</b>
+                    <hr>
+                    <div>                       
+                        <div *ngFor="let carColr of colors">
+                            <div class="checkbox" style="margin-left: 100px; text-align: left;">
+                                <input type="checkbox" value={{carColr}} (change)="addToFilterColors($event,carColr)">
+                                <label> &nbsp; {{carColr}} :</label>                              
+                            </div>
+                        </div>
+                        <hr>
+                    </div>
+                </div>
+                <div>      
+                    <b>Price:</b>  
+                    <hr>             
+                    <div class="form-group row-cols-2" >   
+                        <label> Min Price (INR)</label>                       
+                         <Select  style="float: right;margin-right: 10px;" name="pricemin" class="form-control" [(ngModel)]="pricemin" ngDefaultControl>
+                              <option [ngValue]=500000>500000</option> 
+                              <option [ngValue]=1000000>1000000</option>                             
+                        </Select>                     
+                    </div>
+                    <div class="form-group row-cols-2">   
+                        <label> Max Price (INR)</label>                       
+                         <Select style="float: right;margin-right: 10px;" name="pricemax" class="form-control" [(ngModel)]="pricemax" ngDefaultControl>
+                              <option [ngValue]=1000000>1000000</option> 
+                              <option [ngValue]=2000000>2000000</option>                             
+                        </Select>                     
+                    </div>
+                </div>
+                <hr>
+               <button class="btn btn-primary" type="button" (click)="filterSearchedCars()">Apply Filter</button>
+            </nav>
+        </div>
+        <div class="rightdiv">
+            <div *ngIf="searchedCarModels!=undefined">
+                <h5>Seach result based on : <small>{{brandName}},{{city}},{{showroom}} </small></h5>
+                <hr>
+                <div *ngFor="let specobj of searchedCarModels">    
+                    <div class="left">  
+                        <p> Car Model: {{specobj.spec.model}}</p>
+                        <p> Color:  {{specobj.spec.color}}</p>
+                        <p> Price:  {{specobj.spec.price}} INR</p>                               
+                        <button class="btn btn-primary" type="submit" (click)="placeOrder(specobj)" *ngIf="specobj.spec.stock>0" >Place Order</button>
+                        <button *ngIf="specobj.spec.stock==0" class="btn btn-primary" type="submit" disabled=true >Place Order</button>
+                        <p *ngIf="specobj.spec.stock==0" style="color: red;">Stock is not available!</p>                      
+                    </div> 
+                    <div>
+                        <img *ngIf="specobj.spec.imageUrl" [src]="specobj.spec.imageUrl"> 
+                        <img *ngIf="specobj.spec.imageUrl==null || specobj.spec.imageUrl==undefined" title="Default image" src="assets/default.jpg"> 
+                    </div>  
+                    <div style="clear: both;"></div>
+                    <hr>  
+                </div>               
+            </div>
+            <div *ngIf="searchedCarModels==undefined||searchedCarModels.length==0">No Result found!</div>  
+        </div>
+        <div style="clear: both;"></div>
+    </div>
+</div>

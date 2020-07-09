@@ -1,0 +1,31 @@
+<div class="container-fluid">
+    <app-header></app-header>
+   
+<form #searchCars="ngForm" class="row-cols-2" style="margin-left: 30%;">    
+    <div class="form-group">
+        <div class="form-group">   
+            <label>Select Brand</label>                       
+             <Select name="brand" class="form-control" [(ngModel)]="selectedBrand" ngDefaultControl (change)="getCities()">
+                <option [ngValue]="undefined">Select Brand</option>
+                <option *ngFor="let brandItem of brands">{{brandItem.brand}}</option>                              
+            </Select>                     
+        </div>
+        <div class="form-group"> 
+            <label>Select Your City</label>                    
+            <Select name="city" class="form-control" [(ngModel)]="selectedCity" ngDefaultControl (change)="getShowrooms()">
+                <option [ngValue]="undefined">Select City</option>
+                <option *ngFor="let cityItem of cities" >{{cityItem.city}}</option>                              
+            </Select>              
+        </div>       
+        <div class="form-group">    
+            <label>Select Showroom</label>                   
+            <Select name="showroom" class="form-control" [(ngModel)]="selectedShowRoom" ngDefaultControl>
+                <option [ngValue]="undefined">Select Showroom</option> 
+                <option *ngFor="let showroomItem of showrooms">{{showroomItem.showroom}}</option>                              
+            </Select>           
+        </div> 
+
+        <button class="btn btn-primary" type="submit" (click)="search()">Search</button>  
+ </div>       
+</form>
+</div>
